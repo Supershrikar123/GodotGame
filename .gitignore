@@ -1,3 +1,4 @@
+
 # Godot 4.2+ specific ignores
 ~*.dll
 
@@ -23,3 +24,7 @@ mono_crash.*.json
 *.exe
 # Uncomment if your project does not version PCK files as runtime dependencies.
 # *.pck
+=======
+# Godot 4+ specific ignores
+.godot/
+/android/

@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bbrol7ta7qdbp"]
+
+[ext_resource type="Script" uid="uid://bqu1ykugpmwl7" path="res://Scenes/mainGame.gd" id="1_3ku17"]
+[ext_resource type="Shader" uid="uid://b60o14t7u8n87" path="res://Scenes/CRToverlay.gdshader" id="3_7lxqf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bofqt"]
+shader = ExtResource("3_7lxqf")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/screen_size = Vector2(1920, 1080)
+shader_parameter/pixel_size = 2.0
+shader_parameter/pixelate = true
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/bezel_line_opacity = 0.7
+shader_parameter/glass_highlight_opacity = 0.4
+
+[node name="MainMenuUi" type="Control" unique_id=1113315942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3ku17")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1980421550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GaneContent" type="Control" parent="." unique_id=314448472]
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GaneContent" unique_id=1456492457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 18.0
+offset_right = 1917.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GaneContent/MarginContainer" unique_id=1021887396]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=1157897180]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="StatsRow1" type="HBoxContainer" parent="GaneContent/MarginContainer/VBoxContainer/Header" unique_id=713750153]
+layout_mode = 2
+
+[node name="SystemLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/StatsRow1" unique_id=1634243833]
+layout_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/StatsRow1" unique_id=739886500]
+layout_mode = 2
+
+[node name="PasswordLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/StatsRow1" unique_id=748727490]
+layout_mode = 2
+
+[node name="GuessLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/StatsRow1" unique_id=1198855994]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GaneContent/MarginContainer/VBoxContainer/Header" unique_id=1115377542]
+layout_mode = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="LivesLabels" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/HBoxContainer" unique_id=782668227]
+layout_mode = 2
+
+[node name="TotalLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/HBoxContainer" unique_id=1796866515]
+layout_mode = 2
+
+[node name="BestLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/HBoxContainer" unique_id=357780077]
+layout_mode = 2
+
+[node name="MultiLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/HBoxContainer" unique_id=1630620358]
+layout_mode = 2
+
+[node name="CreditsLabel" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header/HBoxContainer" unique_id=2037506597]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GaneContent/MarginContainer/VBoxContainer/Header" unique_id=554687278]
+layout_mode = 2
+
+[node name="MainRow" type="HBoxContainer" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=67921825]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=82177714]
+copy_mode = 2
+
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=222624950]
+visible = false
+material = SubResource("ShaderMaterial_bofqt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

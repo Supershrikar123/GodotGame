@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://d0bikv8owqxro"]
+
+[ext_resource type="FontFile" uid="uid://td4vl6jrubua" path="res://Assets/Perfect DOS VGA 437.ttf" id="2_m1gix"]
+[ext_resource type="Shader" uid="uid://b60o14t7u8n87" path="res://Scenes/CRToverlay.gdshader" id="3_m1gix"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5p3a5"]
+font = ExtResource("2_m1gix")
+font_size = 35
+font_color = Color(0.02, 1.084, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bofqt"]
+shader = ExtResource("3_m1gix")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/screen_size = Vector2(1920, 1080)
+shader_parameter/pixel_size = 2.0
+shader_parameter/pixelate = true
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/bezel_line_opacity = 0.7
+shader_parameter/glass_highlight_opacity = 0.4
+
+[node name="MainMenuUi" type="Control" unique_id=1113315942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1980421550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GaneContent" type="Control" parent="." unique_id=314448472]
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GaneContent" unique_id=1456492457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 18.0
+offset_right = 1917.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GaneContent/MarginContainer" unique_id=1075023677]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 145
+
+[node name="Label" type="Label" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=417813871]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+text = "WORDHACK // ZERO"
+label_settings = SubResource("LabelSettings_5p3a5")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=2050451692]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_m1gix")
+text = "2. NETWORK CONFIG [SETTINGS]"
+flat = true
+
+[node name="Control" type="Control" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=1086524281]
+layout_mode = 2
+offset_transform_enabled = true
+
+[node name="Button2" type="Button" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=1960243768]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_m1gix")
+text = "1. INITIALIZE SYSTEM [PLAY]"
+flat = true
+
+[node name="Control2" type="Control" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=208740131]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=2061415479]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 1, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_m1gix")
+text = "3. TERMINATE SESSION [QUIT]"
+flat = true
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=82177714]
+copy_mode = 2
+
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=222624950]
+material = SubResource("ShaderMaterial_bofqt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

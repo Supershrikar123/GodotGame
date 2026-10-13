@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://3bo6ngys313n"]
+
+[ext_resource type="Script" uid="uid://bqu1ykugpmwl7" path="res://Scenes/mainGame.gd" id="1_0e3vx"]
+[ext_resource type="FontFile" uid="uid://td4vl6jrubua" path="res://Assets/Perfect DOS VGA 437.ttf" id="2_6j5ir"]
+[ext_resource type="Shader" uid="uid://b60o14t7u8n87" path="res://Scenes/CRToverlay.gdshader" id="3_mgc0q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ly2yo"]
+font = ExtResource("2_6j5ir")
+font_color = Color(0, 1, 0.4, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bofqt"]
+shader = ExtResource("3_mgc0q")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/screen_size = Vector2(1920, 1080)
+shader_parameter/pixel_size = 2.0
+shader_parameter/pixelate = true
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/bezel_line_opacity = 0.7
+shader_parameter/glass_highlight_opacity = 0.4
+
+[node name="MainMenuUi" type="Control" unique_id=1113315942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0e3vx")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1980421550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GaneContent" type="Control" parent="." unique_id=314448472]
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GaneContent" unique_id=1456492457]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 18.0
+offset_right = 1917.0
+offset_bottom = 1098.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GaneContent/MarginContainer" unique_id=1801405258]
+layout_mode = 2
+theme_override_constants/separation = 117
+alignment = 1
+
+[node name="Label" type="Label" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=504130881]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2.78, 2.78)
+theme_override_font_sizes/font_size = 200
+text = "WORDHACK"
+label_settings = SubResource("LabelSettings_ly2yo")
+horizontal_alignment = 1
+
+[node name="GuessGrid" type="GridContainer" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=896106837]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 5
+
+[node name="Button" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1204869016]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button2" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=514671549]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button3" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=946473700]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button4" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=110523136]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button5" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1395649909]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button6" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=380923794]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button7" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=875357223]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button8" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1685432953]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button9" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1063157385]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button10" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1223744834]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button11" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=970642740]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button12" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=206641355]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button13" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=2077082124]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button14" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=1911680987]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button15" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=2144175894]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button16" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=917261576]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button17" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=449137398]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button18" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=114861761]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button19" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=265192889]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="Button20" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/GuessGrid" unique_id=62432970]
+custom_minimum_size = Vector2(130, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="HandBox" type="HBoxContainer" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=1840293649]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/HandBox" unique_id=1987278222]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6862745, 0, 1)
+theme_override_fonts/font = ExtResource("2_6j5ir")
+theme_override_font_sizes/font_size = 30
+text = "[ ADMIN ]"
+
+[node name="Button2" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/HandBox" unique_id=783513341]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6862745, 0, 1)
+theme_override_fonts/font = ExtResource("2_6j5ir")
+theme_override_font_sizes/font_size = 30
+text = "[ ADMIN ]"
+
+[node name="Button3" type="Button" parent="GaneContent/MarginContainer/VBoxContainer/HandBox" unique_id=1205820989]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6862745, 0, 1)
+theme_override_fonts/font = ExtResource("2_6j5ir")
+theme_override_font_sizes/font_size = 30
+text = "[ ADMIN ]"
+
+[node name="CrackButton" type="Button" parent="GaneContent/MarginContainer/VBoxContainer" unique_id=791793448]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_6j5ir")
+theme_override_font_sizes/font_size = 32
+text = "INITIATE CRACK"
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="." unique_id=82177714]
+copy_mode = 2
+
+[node name="CRTOverlay" type="ColorRect" parent="." unique_id=222624950]
+visible = false
+material = SubResource("ShaderMaterial_bofqt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
